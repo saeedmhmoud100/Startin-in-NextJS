@@ -1,6 +1,14 @@
 import { notFound } from "next/navigation";
 
 
+export const metadata = {
+    title: 'Reviews',
+    description: 'Reviews',
+    keywords: 'Reviews',
+};
+
+
+
 export default function Reviews({params} : {
     params: {
         productId: string;
