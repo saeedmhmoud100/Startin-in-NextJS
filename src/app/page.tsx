@@ -9,6 +9,9 @@ export default function Home() {
             <li>
                 <Link href="/products/">Products</Link>
             </li>
+            <li>
+                <Link href="/order-product/">order-product</Link>
+            </li>
         </ul>
 
     </main>

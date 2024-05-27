@@ -1,6 +1,9 @@
+"use client";
+
 import {Metadata} from "next";
 import products from "@/app/_data/products";
 import Link from "next/link";
+import {usePathname} from "next/navigation";
 
 
 // export const metadata = {
@@ -9,7 +12,7 @@ import Link from "next/link";
 //     keywords: 'Products List, Products List Page',
 // };
 
-export const metadata: Metadata = {
+/*export const metadata: Metadata = {
     title: {
         //absolute: 'Products List Page',
         default: 'Products List Page',
@@ -17,17 +20,18 @@ export const metadata: Metadata = {
     },
     description: 'Products List Page',
     keywords: 'Products List, Products List Page',
-};
+};*/
 
 
-const page = () => {
+const Page = () => {
+    const pathname = usePathname();
     return (
         <div>
             <h3>Products List</h3>
             <ul>
                 {products?.map((product,i) => (
                     <>
-                        <li key={product.id}><Link href={`products/${product.id}/`}> {product.name} </Link></li>
+                        <li key={product.id}><Link href={`${pathname}/${product.id}/`}> {product.name} </Link></li>
                         <li key={product.id}><Link href={`products/${product.id}/`} replace> {product.name} with replace </Link></li> {/*// replace the current entry in the history stack with home page */}
                     </>
                 ))}
@@ -36,4 +40,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;
