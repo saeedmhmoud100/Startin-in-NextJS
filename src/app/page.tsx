@@ -12,6 +12,9 @@ export default function Home() {
             <li>
                 <Link href="/order-product/">order-product</Link>
             </li>
+            <li>
+                <Link href="/login/">login</Link>
+            </li>
         </ul>
 
     </main>

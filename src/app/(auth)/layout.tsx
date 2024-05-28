@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
+import {useState} from "react";
 
 
 const nabLinks = [
@@ -11,7 +12,7 @@ const nabLinks = [
 
 export default function Layout({ children }) {
     const pathname = usePathname();
-
+    const [user, setUser] = useState("");
   return (
     <div>
             {nabLinks.map((link, index) => (
@@ -19,7 +20,8 @@ export default function Layout({ children }) {
                     <p>{link.name}</p>
                 </Link>
             ))}
-
+        <label>User from layout:</label>
+        <input onChange={e => setUser(e.target.value)} value={user}/>
       {children}
     </div>
   );
