@@ -8,6 +8,11 @@ export const metadata = {
 };
 
 
+function rand(){
+    return Math.floor(Math.random() * 2);
+
+}
+
 
 export default function Reviews({params} : {
     params: {
@@ -15,6 +20,11 @@ export default function Reviews({params} : {
         reviewId: string;
     };
 }) {
+
+    if(rand() && rand()){
+        throw new Error("There is some Error in the page. Please try again later.");
+    }
+
 
     if(parseInt(params.reviewId) > 100)
     {
