@@ -1,11 +1,13 @@
+"use client";
+
 import { notFound } from "next/navigation";
 
 
-export const metadata = {
-    title: 'Reviews',
-    description: 'Reviews',
-    keywords: 'Reviews',
-};
+// export const metadata = {
+//     title: 'Reviews',
+//     description: 'Reviews',
+//     keywords: 'Reviews',
+// };
 
 
 function rand(){
@@ -21,7 +23,7 @@ export default function Reviews({params} : {
     };
 }) {
 
-    if(rand() && rand()){
+    if(rand()){
         throw new Error("There is some Error in the page. Please try again later.");
     }
 
