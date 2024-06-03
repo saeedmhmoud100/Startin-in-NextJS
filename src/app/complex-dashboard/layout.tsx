@@ -6,10 +6,13 @@ type props = {
     users: React.ReactNode;
     revenue: React.ReactNode;
     notifications: React.ReactNode;
+    login: React.ReactNode;
 }
 
 export default function Layout(props) {
-    return (
+    const LoggedIn = false;
+
+    return LoggedIn ? (
         <div>
             <div>{props.children}</div>
             <div style={{display: "flex"}}>
@@ -22,5 +25,5 @@ export default function Layout(props) {
                 </div>
             </div>
         </div>
-    );
+    ) : <div>{props.login}</div>;
 }
